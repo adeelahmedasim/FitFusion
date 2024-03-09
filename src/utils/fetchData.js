@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const exerciseOptions = {
+export const  exerciseOptions = {
   method: 'GET',
   url: 'https://exercisedb.p.rapidapi.com/exercises',
  params: {limit: '1400'},
@@ -10,11 +10,13 @@ export const exerciseOptions = {
   }
 };
 
-try {
-	const response = await axios.request(exerciseOptions);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
+export async function fetchExerciseData() {
+  try {
+    const response = await axios.request(exerciseOptions);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export const youtubeOptions = {
@@ -29,11 +31,13 @@ export const youtubeOptions = {
   }
 };
 
-try {
-	const response = await axios.request(youtubeOptions);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
+export async function fetchYoutubeData() {
+  try {
+    const response = await axios.request(youtubeOptions);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export const fetchData = async (url, options) => {
